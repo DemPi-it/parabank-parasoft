@@ -15,8 +15,12 @@ import java.time.Duration;
 public class MainPage extends BaseSeleniumTest {
     private final By usernameForm = By.xpath("//*[@id=\"loginPanel\"]/form/div[1]/input");
     private final By passwordForm = By.xpath("//*[@id=\"loginPanel\"]/form/div[2]/input");
-    private String username = "demo";
-    private String password = "demo123";
+    private final By personalAccount = By.xpath("//*[@id=\"rightPanel\"]/div/div/h1");
+    private final String expectedPersonalAccount = "Accounts Overview";
+    private final By balanceXpath = By.xpath("//*[@id=\"accountTable\"]/tbody/tr[2]/td[2]/b");
+    private final String expectedBalance = "$515.50";
+    private final String username = "demo";
+    private final String password = "demo123";
 
     @Test
     public void loginTest(){
@@ -24,5 +28,8 @@ public class MainPage extends BaseSeleniumTest {
         driver.findElement(usernameForm).sendKeys(username);
         driver.findElement(passwordForm).sendKeys(password);
         driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input")).click();
+        String currentBalance = driver.findElement(balanceXpath).getText();
+        Assertions.assertEquals(expectedPersonalAccount, driver.findElement(personalAccount).getText());
+        Assertions.assertEquals(expectedBalance, currentBalance);
     }
 }
