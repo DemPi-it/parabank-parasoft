@@ -16,7 +16,7 @@ public class AboutPage extends BaseSeleniumTest {
 
     @Test
     public void aboutTest(){
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(URL);
         WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
         waiter.until(ExpectedConditions.elementToBeClickable(aboutButton));
         driver.findElement(aboutButton).click();

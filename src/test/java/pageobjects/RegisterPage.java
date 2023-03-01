@@ -18,7 +18,7 @@ public class RegisterPage extends BaseSeleniumTest {
     private String password = "demo123";
     @Test
     public void registerTest(){
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(URL);
         driver.findElement(registerButton).click();
         WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
         waiter.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"customer.firstName\"]"))));
@@ -29,7 +29,7 @@ public class RegisterPage extends BaseSeleniumTest {
 
     @Test
     public void unsuccessfulRegisterTest(){
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(URL);
         driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/p[2]/a")).click();
         WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
         waiter.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@id=\"customer.firstName\"]"))));

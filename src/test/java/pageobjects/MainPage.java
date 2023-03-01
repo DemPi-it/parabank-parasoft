@@ -24,7 +24,7 @@ public class MainPage extends BaseSeleniumTest {
 
     @Test
     public void loginTest(){
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
+        driver.get(URL);
         driver.findElement(usernameForm).sendKeys(username);
         driver.findElement(passwordForm).sendKeys(password);
         driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input")).click();
