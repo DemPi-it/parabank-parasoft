@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseSeleniumTest {
-    protected final String URL = "https://parabank.parasoft.com/parabank/index.htm";
+    protected final String URL = "https://parabank.parasoft.com/parabank/admin.htm";
     protected WebDriver driver;
 
     @BeforeAll
