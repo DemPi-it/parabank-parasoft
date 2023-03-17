@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pageobjects.RegisterPage" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-03-03T07:29:28" hostname="DESKTOP-7SHDMNV" time="24.35">
+<testsuite name="pageobjects.RegisterPage" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-17T15:53:11" hostname="DESKTOP-3I8JO16" time="22.83">
   <properties/>
-  <testcase name="registerTest()" classname="pageobjects.RegisterPage" time="14.928"/>
-  <testcase name="unsuccessfulRegisterTest()" classname="pageobjects.RegisterPage" time="9.42"/>
+  <testcase name="checkUrl()" classname="pageobjects.RegisterPage" time="7.084"/>
+  <testcase name="registerTest()" classname="pageobjects.RegisterPage" time="7.394"/>
+  <testcase name="unsuccessfulRegisterTest()" classname="pageobjects.RegisterPage" time="8.35"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: No SLF4J providers were found.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
-Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 7676
+Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 26819
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1677828572.723][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
-мар. 03, 2023 10:29:33 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find an exact match for CDP version 110, so returning the closest version found: 109
-Starting ChromeDriver 110.0.5481.77 (65ed616c6e8ee3fe0ad64fe83796c020644d42af-refs/branch-heads/5481@{#839}) on port 5139
+мар. 17, 2023 6:53:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 111, so returning the closest version found: 109
+Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 36370
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1677828585.008][WARNING]: virtual void DevToolsClientImpl::AddListener(DevToolsEventListener *) subscribing a listener to the already connected DevToolsClient. Connection notification will not arrive.
-мар. 03, 2023 10:29:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find an exact match for CDP version 110, so returning the closest version found: 109
+мар. 17, 2023 6:53:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 111, so returning the closest version found: 109
+Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 36160
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+мар. 17, 2023 6:53:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 111, so returning the closest version found: 109
 ]]></system-err>
 </testsuite>
