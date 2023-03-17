@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseSeleniumTest {
     protected final String URL = "https://parabank.parasoft.com/parabank/index.htm";
@@ -19,12 +20,19 @@ public class BaseSeleniumTest {
 
     @BeforeEach
     void setup() {
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+        driver = new ChromeDriver(chromeOptions);
     }
 
     @AfterEach
     void teardown() {
         driver.quit();
+    }
+
+    @Test
+    public void checkUrl(){
+        driver.get(URL);
     }
 
 }
