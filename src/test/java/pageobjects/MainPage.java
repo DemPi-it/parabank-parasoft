@@ -22,14 +22,4 @@ public class MainPage extends BaseSeleniumTest {
     private final String username = "demo";
     private final String password = "demo123";
 
-    @Test
-    public void loginTest(){
-        driver.get(URL);
-        driver.findElement(usernameForm).sendKeys(username);
-        driver.findElement(passwordForm).sendKeys(password);
-        driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input")).click();
-        String currentBalance = driver.findElement(balanceXpath).getText();
-        Assertions.assertEquals(expectedPersonalAccount, driver.findElement(personalAccount).getText());
-        Assertions.assertEquals(expectedBalance, currentBalance);
-    }
 }

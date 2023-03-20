@@ -19,7 +19,6 @@ public class ProductsPage extends BaseSeleniumTest {
 
     @Test
     public void redirectionTest(){
-        driver.get(URL);
         WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
         waiter.until(ExpectedConditions.elementToBeClickable(productsButton));
         driver.findElement(productsButton).click();
