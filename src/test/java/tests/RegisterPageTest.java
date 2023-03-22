@@ -1,13 +1,7 @@
 package tests;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import specifications.BaseSeleniumTest;
-
-import java.time.Duration;
 
 import static enums.RegistrationResults.SuccessfulRegistrationText;
 
@@ -16,9 +10,9 @@ public class RegisterPageTest extends BaseSeleniumTest {
     public void registerTest(){
         registerPage
                 .clickRegisterButton()
-                .fillForm(user)
+                .fillRegistrationForm(user)
                 .submitRegisterButton();
-        validator.validateRegistrationResult(SuccessfulRegistrationText.getRegTextInfo());
+        registrationValidator.validateRegistrationResult(SuccessfulRegistrationText.getRegTextInfo(), user.getUsername());
 
     }
 

@@ -1,15 +1,10 @@
 package pageobjects;
 
 import enums.RegisterFields;
-import lombok.RequiredArgsConstructor;
 import models.RegistrationUser;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import specifications.BaseSeleniumTest;
-
-import javax.swing.plaf.nimbus.State;
 
 import static enums.RegisterFields.*;
 import static pageobjects.locators.RegisterPageLocators.*;
@@ -21,13 +16,8 @@ public class RegisterPage extends BasePageObject{
         super(driver, waiter);
     }
 
-    public void login(String username, String password){
-        driver.findElement(By.xpath(String.format(baseXpath, 1))).sendKeys(username);//enums
-        driver.findElement(By.xpath(String.format(baseXpath, 2))).sendKeys(password);
-        driver.findElement(By.xpath(String.format(baseXpath, 3))).click();
-    }
 
-    public RegisterPage fillForm(RegistrationUser regUser){
+    public RegisterPage fillRegistrationForm(RegistrationUser regUser){
         waiter.until(ExpectedConditions.elementToBeClickable(submitRegisterButton));
         fillFormField(FirstName, regUser.getFirstName());
         fillFormField(LastName, regUser.getLastName());

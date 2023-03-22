@@ -11,7 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.BasePageObject;
+import pageobjects.LoginPage;
 import pageobjects.RegisterPage;
+import validators.LoginValidator;
 import validators.RegistrationPageValidator;
 
 import java.time.Duration;
@@ -21,7 +23,9 @@ public class BaseSeleniumTest {
     protected WebDriver driver;
     protected WebDriverWait waiter;
     protected  RegisterPage registerPage;
-    protected RegistrationPageValidator validator;
+    protected RegistrationPageValidator registrationValidator;
+    protected LoginPage loginPage;
+    protected LoginValidator loginValidator;
     protected final RegistrationUser user = RegistrationUser.builder()
             .firstName("Kirill")
             .lastName("Bolotin")
@@ -47,8 +51,10 @@ public class BaseSeleniumTest {
         chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
         driver = new ChromeDriver(chromeOptions);
         waiter =  new WebDriverWait(driver, Duration.ofSeconds(10));
-        validator = new RegistrationPageValidator(driver, waiter);
+        registrationValidator = new RegistrationPageValidator(driver, waiter);
+        loginValidator = new LoginValidator(driver, waiter);
         registerPage= new RegisterPage(driver, waiter);
+        loginPage = new LoginPage(driver, waiter);
         BasePageObject basePageObject = new BasePageObject(driver, waiter);
         driver.get(URL);
     }
@@ -56,11 +62,6 @@ public class BaseSeleniumTest {
     @AfterEach
     void teardown() {
         driver.quit();
-    }
-
-    @Test
-    public void checkUrl(){
-        driver.get(URL);
     }
 
 }
