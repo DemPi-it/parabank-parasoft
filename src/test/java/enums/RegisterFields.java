@@ -17,9 +17,9 @@ public enum RegisterFields{
     Password("customer.password"),
     RepeatedPassword("repeatedPassword");
 
-    private final String xpath;
+    private final String id;
 
     public By getId(){
-        return By.id(xpath);
+        return By.id(id);
     }
 }
