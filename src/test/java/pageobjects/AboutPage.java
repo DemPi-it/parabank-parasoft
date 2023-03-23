@@ -3,24 +3,23 @@ package pageobjects;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import specifications.BaseSeleniumTest;
 
 import java.time.Duration;
 
-public class AboutPage extends BaseSeleniumTest {
+import static pageobjects.locators.AboutPageLocators.AboutButton;
 
-    private final By aboutButton = By.xpath("//*[@id=\"headerPanel\"]/ul[2]/li[2]/a");
+public class AboutPage extends BasePageObject {
 
+    public AboutPage(WebDriver driver, WebDriverWait waiter) {
+        super(driver, waiter);
+    }
 
-    @Test
-    public void aboutTest(){
-        WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
-        waiter.until(ExpectedConditions.elementToBeClickable(aboutButton));
-        driver.findElement(aboutButton).click();
-        waiter.until(ExpectedConditions.presenceOfElementLocated((By.xpath("//*[@id=\"rightPanel\"]/h1"))));
-        String aboutText = driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/h1")).getText();
-        Assertions.assertEquals("ParaSoft Demo Website", aboutText);
+    public AboutPage clickAboutButton(){
+        waiter.until(ExpectedConditions.elementToBeClickable(AboutButton));
+        driver.findElement(AboutButton).click();
+        return this;
     }
 }
