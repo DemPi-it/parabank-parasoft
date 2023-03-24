@@ -10,12 +10,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageobjects.AboutPage;
-import pageobjects.BasePageObject;
-import pageobjects.LoginPage;
-import pageobjects.RegisterPage;
+import pageobjects.*;
 import validators.AboutPageValidator;
 import validators.LoginValidator;
+import validators.ProductsPageValidator;
 import validators.RegistrationPageValidator;
 
 import java.time.Duration;
@@ -30,6 +28,8 @@ public class BaseSeleniumTest {
     protected LoginValidator loginValidator;
     protected AboutPage aboutPage;
     protected AboutPageValidator aboutPageValidator;
+    protected ProductsPage productsPage;
+    protected ProductsPageValidator productsPageValidator;
 
     protected final RegistrationUser user = RegistrationUser.builder()
             .firstName("Kirill")
@@ -62,6 +62,8 @@ public class BaseSeleniumTest {
         registerPage= new RegisterPage(driver, waiter);
         loginPage = new LoginPage(driver, waiter);
         aboutPage = new AboutPage(driver, waiter);
+        productsPage = new ProductsPage(driver, waiter);
+        productsPageValidator = new ProductsPageValidator(driver, waiter);
         BasePageObject basePageObject = new BasePageObject(driver, waiter);
         driver.get(URL);
     }

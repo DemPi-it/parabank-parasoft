@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/LearningUItesting.main.iml" filepath="$PROJECT_DIR$/.idea/modules/LearningUItesting.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/LearningUItesting.test.iml" filepath="$PROJECT_DIR$/.idea/modules/LearningUItesting.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.auto.LearningUItesting.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.auto.LearningUItesting.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ru.auto.LearningUItesting.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ru.auto.LearningUItesting.test.iml" />
     </modules>
   </component>
 </project>

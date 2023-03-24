@@ -3,30 +3,30 @@ package pageobjects;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import specifications.BaseSeleniumTest;
 
 import java.time.Duration;
 
-public class ProductsPage extends BaseSeleniumTest {
+import static pageobjects.locators.ProductsPageLocators.acceptCookiesXpath;
+import static pageobjects.locators.ProductsPageLocators.productsButton;
 
-    private final By productsButton = By.xpath("//*[@id=\"headerPanel\"]/ul[1]/li[4]/a");
-    private final By titleOnRedirectedPageXpath = By.xpath("/html/body/section[1]/div/div/div/div/div/div/h1");
-    private final By acceptCookiesXpath = By.xpath("//*[@id=\"hs-eu-confirmation-button\"]");
-    private String expectedTitile = "Innovative and Intelligent Software Testing Platform";
-    private String expectedUrl = "https://www.parasoft.com/products/";
+public class ProductsPage extends BasePageObject {
+    public ProductsPage(WebDriver driver, WebDriverWait waiter) {
+        super(driver, waiter);
+    }
 
-    @Test
-    public void redirectionTest(){
-        WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
-        waiter.until(ExpectedConditions.elementToBeClickable(productsButton));
-        driver.findElement(productsButton).click();
+    public ProductsPage clickOnAcceptCookiesButton(){
         waiter.until(ExpectedConditions.elementToBeClickable(acceptCookiesXpath));
         driver.findElement(acceptCookiesXpath).click();
-        String titleOnRedirectedPageText = driver.findElement(titleOnRedirectedPageXpath).getText();
-        String currentUrl = driver.getCurrentUrl();
-        Assertions.assertEquals(expectedUrl, currentUrl);
-        Assertions.assertEquals(expectedTitile, titleOnRedirectedPageText);
+        return this;
+    }
+
+    public ProductsPage clickOnProductsLink(){
+        waiter.until(ExpectedConditions.elementToBeClickable(productsButton));
+        driver.findElement(productsButton).click();
+        return this;
     }
 }
