@@ -29,17 +29,4 @@ public class ProductsPage extends BasePageObject {
         driver.findElement(productsButton).click();
         return this;
     }
-
-//    @Test
-//    public void redirectionTest(){
-//        WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        waiter.until(ExpectedConditions.elementToBeClickable(productsButton));
-//        driver.findElement(productsButton).click();
-//        waiter.until(ExpectedConditions.elementToBeClickable(acceptCookiesXpath));
-//        driver.findElement(acceptCookiesXpath).click();
-//        String titleOnRedirectedPageText = driver.findElement(titleOnRedirectedPageXpath).getText();
-//        String currentUrl = driver.getCurrentUrl();
-//        Assertions.assertEquals(expectedUrl, currentUrl);
-//        Assertions.assertEquals(expectedTitile, titleOnRedirectedPageText);
-//    }
 }
